@@ -1,0 +1,207 @@
+/* Color variables for easy dark mode switching */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #0056b3;
+    --card-bg: #f4f4f4;
+}
+
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --primary-color: #4da3ff;
+    --card-bg: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* This makes scrolling smooth when clicking a menu link */
+    scroll-behavior: smooth; 
+}
+
+body {
+    background : url(https://static.vecteezy.com/system/resources/thumbnails/017/455/229/small/empty-scene-with-leaves-shadows-blue-background-template-for-product-cosmetic-presentation-natural-mock-up-backdrop-with-empty-copy-space-display-showcase-3d-rendering-photo.jpg);
+    color: var(--text-color);
+    /* This makes the color change to dark mode look smooth */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: cornflowerblue;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Keeps the menu at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    /* Adds a smooth color change when hovering */
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+button#theme-toggle {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s; /* Motion for the button */
+}
+
+/* Button jumps slightly when hovered */
+button#theme-toggle:hover {
+    transform: translateY(-3px); 
+}
+
+/* Animation for the whole page when it loads */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .section {
+    /* Applies the fadeIn animation created above */
+    animation: fadeIn 1s ease-out;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Standard Button Style */
+.btn, .btn-small {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    /* Makes hover motions smooth */
+    transition: all 0.3s ease; 
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Buttons lift up and cast a shadow when hovered */
+.btn:hover, .btn-small:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
+}
+
+.section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.bg-light {
+    align-items: center;
+    background-color: lightsteelblue;
+    width: 60%;
+    margin: 0 auto;
+    border: 2px solid var(--primary-color);
+    border-radius: 18px;
+    padding: 30px 20px;
+}
+
+/* Skills Section Styles */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows skills to drop to the next line on small screens */
+}
+
+.skill-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    /* Motion effect */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1); /* Makes the badge 10% bigger when hovered */
+}
+
+/* Project Card Styles */
+.project-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    border: 1px solid #ddd;
+    /* Motion effect for the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* The card floats up when hovered */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 30px;
+}
+
+.contact-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
